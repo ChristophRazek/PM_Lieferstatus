@@ -2,6 +2,7 @@ import pandas as pd
 import datetime
 import pyodbc
 import warnings
+from tkinter import messagebox
 
 warnings.simplefilter("ignore")
 
@@ -39,3 +40,5 @@ df.to_excel(r'S:\EMEA\Kontrollabfragen\PM_Lieferstatus.xlsx', index=False)
 with open(r'S:\EMEA\Kontrollabfragen\PM_Lieferstatus.txt', 'w') as f:
     f.write(f'PM Lieferstatus last checked at: {d}')
     f.close()
+
+messagebox.showinfo('Update Erfolgreich!', f'Das PM Status Update wurde am {d} erfolgreich durchgeführt.')
